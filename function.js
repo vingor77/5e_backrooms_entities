@@ -9,7 +9,7 @@ for(var i = 0; i < entityCount; i++) {
     //Create the button element
     button = document.createElement("button");
     button.setAttribute("type", "button");
-    button.setAttribute("class", "btn btn-primary");
+    button.setAttribute("class", "btn btn-outline-danger");
     button.setAttribute("onclick", "show(" + (i + 2) + ")");
     button.innerText = "Entity " + (i + 2);
 
