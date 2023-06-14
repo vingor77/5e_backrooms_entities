@@ -27,11 +27,6 @@ function show(entity) {
     stats.setAttribute("src", "statBlocks/Entity_" + entity + ".png");
     stats.setAttribute("class", "justify-content-center");
 
-    //Repeat steps above but for image.
-    var stats = document.createElement("img");
-    stats.setAttribute("src", "images/Entity_" + entity + ".png");
-    stats.setAttribute("class", "justify-content-center");
-
     div.innerText = ""; //Wipe previous image, then set the new one.
 
     //Append stat block
