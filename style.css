@@ -15,3 +15,12 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+h1, p {
+    text-align: center;
+    color: red;
+}
+
+h1 {
+    text-decoration: underline;
+}
