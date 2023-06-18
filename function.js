@@ -2,15 +2,19 @@
 
 var nav = document.getElementById("nav");
 
+//9 needs more stat blocks
+//96 needs more stat blocks
+//0 means keymaster
+//130 needs more stat blocks
 var entities = 
 [   
-    2, 3, 4, 5, 6, 8, 9, 10, 12, 14, 15, 17, 19, 20, 24, 25, 31, 34, 36,
-    48, 54, 55, 59, 64, 65, 70, 73, 74, 83, 89, 94, 95, 101, 102, 105, 
+    2, 3, 4, 5, 6, 8, 9, 10, 14, 15, 20, 24, 25, 31, 34,
+    54, 64, 74, 83, 89, 94, 95, 101, 102, 105, 
     108, 110, 113, 116, 130, 170, 503, 179, 196, 11, 18, 111, 131, 135, 
-    185, 186, 197, 35, 63, 96, 126, 777, 69, 78, 41, 107, 66, 97, 32, 
-    33, 91, 71, 61, 114, 27, 365, 99, 136, 93, 987, 440, 62, 140, 180, 
-    16, 80, 7, 26, 76, 44, 52, 86, 40, 133, 92, 232, 50, 346, 740, 75, 
-    456, 231, 100, 106, 13, 167, 67, 23, 104, 22, 42, 45, 49, 600, 220, 297
+    185, 197, 63, 96, 777, 69, 78, 41, 107, 66, 97, 32, 
+    33, 91, 71, 61, 114, 27, 365, 136, 93, 62, 
+    16, 80, 26, 44, 52, 86, 40, 232, 50, 346, 740, 75, 
+    456, 231, 100, 13, 167, 67, 104, 22, 42, 45, 49, 600, 297, 0
 ];
 
 entities.sort(function(a, b) {return a-b});
@@ -33,15 +37,38 @@ for(var i = 0; i < entities.length; i++) {
 }
 
 function show(entity) {
-    var div = document.getElementById('showImage');
+    document.getElementById('showImage').innerText = ""; //Wipe previous image, then set the new one.
 
     //Create the img element
-    var stats = document.createElement("img");
-    stats.setAttribute("src", "statBlocks/Entity_" + entity + ".png");
-    stats.setAttribute("class", "justify-content-center");
+    if(entity == 9) {
+        getImage(entity, 4);
+    }
+    else if(entity == 96) {
+        getImage(entity, 3);
+    }
+    else if(entity == 130) {
+        getImage(entity, 5);
+    }
+    else {
+        getImage(entity, 1);
+    }
+}
 
-    div.innerText = ""; //Wipe previous image, then set the new one.
+function getImage(entity, count) {
+    var div = document.getElementById('showImage');
 
-    //Append stat block
-    div.appendChild(stats);
+    for(var i = 0; i < count; i++) {
+        var stats = document.createElement("img");
+
+        if(count > 1) {
+            stats.setAttribute("src", "statBlocks/Entity_" + entity + "/" + (i + 1) + ".png");
+            stats.setAttribute("class", "justify-content-center");
+        }
+        else {
+            stats.setAttribute("src", "statBlocks/Entity_" + entity + ".png");
+            stats.setAttribute("class", "justify-content-center");
+        }
+
+        div.appendChild(stats);
+    }
 }
