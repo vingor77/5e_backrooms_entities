@@ -1,0 +1,43 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    color: red;
+    text-decoration: underline;
+}
+
+/*ENTITIES START*/
+#entityTabs {
+    background: black;
+}
+
+#entityTabs ul {
+    background: black;
+    border: 0;
+}
+
+#entityTabs li {
+    background: black;
+    border-bottom: 1px solid black; /*Adding a border. The color does not matter since it changes right under it.*/
+    border-color: red;
+}
+
+#entityTabs li a {
+    color: red;
+}
+
+/*When the tab is active, invert the colors to indicate it.*/
+#entityTabs .ui-state-active {
+    background: red;
+}
+
+#entityTabs .ui-state-active a {
+    color: black;
+}
+
+#entityWikiLink {
+    color: red;
+}
+/*ENTITIES END*/
